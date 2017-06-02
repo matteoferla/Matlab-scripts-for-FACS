@@ -13,3 +13,17 @@ This stops it from throwing an error due to infinite values.
 
 ## fca_readfcs
 This is a mod of [fca_readfcs](https://uk.mathworks.com/matlabcentral/fileexchange/9608-fcs-data-reader) by the author himself to deal with 3.1. I am not sure it has gone live on Exchange.
+
+
+## example
+This is just an example of a scatter pot and a histogram in a rather handy format... a protofunction if it wern't of for the fact that I keepchanging bits.
+
+The import is nice though.
+Basically it relies on a file called `sheme.cvs` with the following fields:
+* samplelist. This is a one-two letter code for the sample (e.g. A)
+* name. The pretty name
+* file. the filename
+* colorR. R of RGB for lines
+* colorG. G
+* colorB. B
+* style. The line style of the histogram.
