@@ -1,0 +1,5 @@
+samplelist,name,file,tech,colorR,colorG,colorB,color,style
+2O,BL21/spyC002 unlabelled,(20170908_161733)_O.fcs,.,0,0.447,0.741,blue,:
+2E,BL21/spyC002 + 1 µM SpyT002 5 min,(20170908_160308)_E5.fcs,.,0,0.447,0.741,blue,-
+1O,BL21/spyC-wt unlabelled,(20170905_150643)_O.fcs,.,0.85,0.325,0.098,orange,:
+1E,BL21/spyC-wt 1 µM  SpyT-wt 5 min,(20170905_144613)_E5.fcs,.,0.85,0.325,0.098,orange,-
