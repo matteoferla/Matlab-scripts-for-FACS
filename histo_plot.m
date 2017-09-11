@@ -1,4 +1,17 @@
 
+%% Input
+% I have a file called scheme.csv that maps the file name to a desired color,
+% display name and other attributes.
+
+%% Channel settings
+channelcodes = {'fsc', 'ssc', 'fl1', 'fl2', 'fl3', 'fl4'};
+channel2name = containers.Map(channelcodes, ...
+  {'Front Scatter', 'Side Scatter', '525/30 nm fluorescence (FL1)', '586/25 nm fluorescence (FL2)', '615/25 nm fluorescence (FL3)', '655/LP nm fluorescence (FL4)'});
+channel2color = containers.Map(channelcodes, ...
+  {'Front', 'Side', 'Green', 'Orange', 'Red', 'Far-red'});
+channel2number = containers.Map(channelcodes, [3, 6, 9, 12, 15, 18]); %check .par in metadata.
+
+%% Actual input
 %%% read from file
 scheme = readtable('scheme.csv', 'Encoding', 'UTF-8');
 % something odd check:
