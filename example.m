@@ -2,6 +2,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+close all
+
 %% About
 %{
 This is an example of my setup for analysis files.
@@ -101,16 +103,22 @@ clear data ax filtro;
 figure;
 samples={'A','B','C','D','wt'};
 channel='fl1';
+gated=true;
 cutoff=[0,0];
 hold on
 bs=-2:0.02:4;
 for i=1:numel(samples)
     s=samples{i};
     data=fca_readfcs(sample2file(s))/100;
-    [a,b]=hist(data(:,21),unique(data(:,21)));
-    [x,j]=sort(a,'descend');
-    gatevalue = b(j(1));
-    filtro =  (data(:,21) == gatevalue) & (data(:,channel2number('fsc'))>=cutoff(1)) & (data(:,channel2number('ssc'))>=cutoff(2));
+    if (gated)
+        [a,b]=hist(data(:,21),unique(data(:,21)));
+        [~,j]=sort(a,'descend');
+        gatevalue = b(j(1));
+        gatedness = (data(:,21) == gatevalue);
+    else
+        gatedness = ones(size(data,1),1);
+    end
+    filtro =  gatedness & (data(:,channel2number('fsc'))>=cutoff(1)) & (data(:,channel2number('ssc'))>=cutoff(2));
     [N,edges] = histcounts(log10(data(filtro,channel2number(channel))),bs);
     plot(10.^edges,[N,0]/sum(filtro)*1e4,'LineWidth',2,'Color',sample2color(s),'LineStyle',sample2style(s));
 end
@@ -122,3 +130,7 @@ scala ='log';
 ax=gca;
 ax.XScale=scala;
 ax.TickDir='out';
+
+
+
+
