@@ -20,7 +20,7 @@ Like all FCS files, there is little sense in the numbers. In the S3e case, the n
 
 Therefore the numbers are 0:1E-2:1E4.
 
-The gate is stored as column 21 and is converted into a double. I am unsure how the numbers are converted into string. (See gate_check.m for a script to check).
+The gate is stored as column 21 and is converted into a double. I am unsure how the numbers are converted into string. (See `gate_check.m` for a script to check).
 
 
 ## example
