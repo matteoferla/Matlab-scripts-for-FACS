@@ -35,3 +35,6 @@ Basically it relies on a file called `sheme.cvs` with the following fields:
 * colorG. G
 * colorB. B
 * style. The line style of the histogram.
+
+## multisample_analysis_load.m
+This a variant of the above, same input file, but uses the table and does not convert into maps. This is cleaner, but has the issue that for strings, table.variable(‘field’)

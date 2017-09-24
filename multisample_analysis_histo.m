@@ -10,14 +10,13 @@ ssc_cutoff=[150 250];
 bin_size=0.02; % bin spacing in log incremenets! 10^0.02 = 4.7%
 bs = - 2:bin_size:4; 
 chosen_channel = 'fl1'; % channel to show.
-%%% calculations!
-subset=@(x,i) x{i};
 
+%%% calculations!
 figure;
 hold on
 for i = 1:numel(chosen_samples)
     s = chosen_samples{i};
-    data = fca_readfcs(subset(sample.file(s),1)) / 100;
+    data = fca_readfcs(sample.file{s}) / 100;
     if (gated)
         gatedness = zeros(size(data(:, 21)));
         for z = 1:numel(gatevalues)
@@ -34,7 +33,7 @@ for i = 1:numel(chosen_samples)
         filtro = ones(size(data, 1), 1);
     end
     [N, edges] = histcounts(log10(data(filtro, channel.number(chosen_channel))), bs);
-    plot(10 .^ edges, [N, 0] / sum(filtro) * 1e4, 'LineWidth', 2, 'Color', subset(sample.color(s),1), 'LineStyle', subset(sample.style(s),1));
+    plot(10 .^ edges, [N, 0] / sum(filtro) * 1e4, 'LineWidth', 2, 'Color', sample.color{s}, 'LineStyle', sample.style{s});
 end
 ylabel(sprintf('Counts per bin (%0.f%% increments)',(10^bin_size)*100-100)); % based on bs
 xlabel(channel.name(chosen_channel))
