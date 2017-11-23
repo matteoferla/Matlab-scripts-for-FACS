@@ -1,5 +1,16 @@
 samplelist,name,file,tech,colorR,colorG,colorB,color,style
-2O,BL21/spyC002 unlabelled,(20170908_161733)_O.fcs,.,0,0.447,0.741,blue,:
-2E,BL21/spyC002 + 1 µM SpyT002 5 min,(20170908_160308)_E5.fcs,.,0,0.447,0.741,blue,-
-1O,BL21/spyC-wt unlabelled,(20170905_150643)_O.fcs,.,0.85,0.325,0.098,orange,:
-1E,BL21/spyC-wt 1 µM  SpyT-wt 5 min,(20170905_144613)_E5.fcs,.,0.85,0.325,0.098,orange,-
+A,blah blah,A.fcs,more blah blah,0,0.447,0.741,new blue,-
+B,blah blah,B.fcs,more blah blah,0.85,0.325,0.098,new orange,-
+C,blah blah,C.fcs,more blah blah,0.929,0.694,0.125,new yellow,-
+D,blah blah,D.fcs,more blah blah,0.494,0.184,0.556,new purple,-
+E,blah blah,E.fcs,more blah blah,0.466,0.674,0.188,new green,-
+F,blah blah,F.fcs,more blah blah,0.301,0.745,0.933,new cyan,-
+G,blah blah,G.fcs,more blah blah,0.635,0.078,0.184,new red,-
+H,blah blah,H.fcs,more blah blah,0,0,1,pure blue,-
+I,blah blah,I.fcs,more blah blah,0,0.5,0,pure green,-
+J,blah blah,J.fcs,more blah blah,1,0,0,pure red,-
+K,blah blah,K.fcs,more blah blah,0,0.75,0.75,pure cyan,-
+L,blah blah,L.fcs,more blah blah,0.75,0,0.75,pure magenta,-
+M,blah blah,M.fcs,more blah blah,0.75,0.75,0,pure yellow,-
+N,blah blah,N.fcs,more blah blah,0.25,0.25,0.25,gray,-
+O,blah blah,O.fcs,more blah blah,0,0,0,black,-
