@@ -13,4 +13,8 @@ K,blah blah,K.fcs,more blah blah,0,0.75,0.75,pure cyan,-
 L,blah blah,L.fcs,more blah blah,0.75,0,0.75,pure magenta,-
 M,blah blah,M.fcs,more blah blah,0.75,0.75,0,pure yellow,-
 N,blah blah,N.fcs,more blah blah,0.25,0.25,0.25,gray,-
+<<<<<<< HEAD
 O,blah blah,O.fcs,more blah blah,0,0,0,black,-
+=======
+O,blah blah,O.fcs,more blah blah,0,0,0,black,-
+>>>>>>> f25c3732faccec5a8b7443a6d8740772d45e8801
