@@ -34,7 +34,7 @@ sample.color=num2cell([sample.colorR, sample.colorG, sample.colorB],2);
 %% Saver
 % save figures? if so change the saver boolean (and re-evaluate this
 % block).
-saver=false;
+saver=true;
 if (saver)
     vprint=@(varargin) print(varargin{:});
 else

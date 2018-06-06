@@ -2,9 +2,9 @@
 %%% config
 chosen_samples = sample.samplelist; % or a subset say
 gated = true; % true: plots only values within a gate(s) listed in gatevalues. 
-gatevalues = [2.5600, 335552, 838874]; % column 21 in S3e data.
+gatevalues = [2.5600, 335552, 838874]; % column 21 in S3e data. To see which you need use gate_check
 low_cutoff = [0, 0]; % fsc and ssc cutoff minimum in gate. Not really needed, unless you made soem weird gates.
-customgate= true; % true: gate a rectangle between fsc_cutoff and ssc_cutoff
+customgate= false; % true: gate a rectangle between fsc_cutoff and ssc_cutoff
 fsc_cutoff=[100 150];
 ssc_cutoff=[150 250];
 bin_size=0.02; % bin spacing in log incremenets! 10^0.02 = 4.7%
@@ -30,7 +30,7 @@ for i = 1:numel(chosen_samples)
             s2=data(:,channel.number('ssc'))<=ssc_cutoff(2);
             filtro =  f1 & f2 & s1 & s2;
     else
-        filtro = ones(size(data, 1), 1);
+        filtro = logical(ones(size(data, 1), 1));
     end
     [N, edges] = histcounts(log10(data(filtro, channel.number(chosen_channel))), bs);
     plot(10 .^ edges, [N, 0] / sum(filtro) * 1e4, 'LineWidth', 2, 'Color', sample.color{s}, 'LineStyle', sample.style{s});
